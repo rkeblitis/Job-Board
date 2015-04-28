@@ -1,0 +1,11 @@
+<h1>Job Board</h1>
+
+<%= form_for @job do |f| %>
+  <h3>Title:<%= f.text_field :title %></h2></br>
+  <h3>Location:<%= f.text_field :location %></h2></br>
+  <h3>Start Date:<%= f.text_field :start_date %></h2></br>
+  <h3>Posted:<%= f.text_field :created_at %></h2></br>
+  <h3>Salary:<%= f.text_field :salary %></h2></br>
+  <h3>About:<%= f.text_area  :description %></h2></br>
+  <h3><%= f.submit  %></h2>
+<% end %>

@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
   # job_board Controller
-  get "/"     ,to:"job_board#index"
-  
+  get "/"     ,to:"job_board#new" ,as: :jobs
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
