@@ -6,7 +6,6 @@ class JobBoardController < ApplicationController
   end
 
   def create
-    raise
     @job = Job.create(params.require(:job).permit(:title, :location, :start_date, :salary, :description))
     redirect_to jobs_path
   end
