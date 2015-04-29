@@ -1,6 +1,6 @@
 <div class="container">
   <header>
-    <h1 id="title">Job Board</h1>
+    <h1 id="title">Ada Job Board</h1>
     <!-- Button trigger modal -->
     <button type="button" id="addNewJob" class="btn btn-default" data-toggle="modal" data-target="#myModal">
       Add New Job
@@ -34,14 +34,26 @@
 
              <h4> <%= f.label :description %></h4>
              <%= f.text_area  :description %>
-             <h4><%= f.submit :id => "createJobButton", :class => "btn btn-default" %></h4>
-         <% end %>
+
        </div>
        <div class="modal-footer">
+         <h4><%= f.submit :id => "createJobButton", :class => "btn btn-default" %></h4>
+     <% end %>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+
         </div>
       </div>
     </div>
   </div>
+
+  <% @jobs.each do |job| %>
+    <h3><%= job.title %></h3>
+    <h4>Location: <%= job.location %></h4>
+    <h4>Start Date: <%= job.start_date %> </h4>
+    <h4>Pay: <%= job.salary %> </h4>
+    <h4>About: <%= job.description %> </h4>
+    <h4>Posted: <%= job.created_at %> </h4></br>
+
+  <% end %>
+
 </div>
