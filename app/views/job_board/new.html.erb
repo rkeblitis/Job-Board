@@ -46,8 +46,8 @@
         </div>
       </div>
     </div>
-
-    <% @jobs.each do |job| %>
+    <!-- Display All Jobs  -->
+    <% sort_jobs(@jobs).each do |job| %>
       <h3><%= job.title %></h3>
       <h4>Location: <%= job.location %></h4>
       <h4>Start Date: <%= job.start_date %> </h4>
