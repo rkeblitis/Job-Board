@@ -7,53 +7,56 @@
     </button>
 
   </header>
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-   <div class="modal-dialog">
-     <div class="modal-content">
-       <div class="modal-header">
-         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-         <h3 class="modal-title" id="myModalLabel">Add New Job</h3>
-       </div>
-       <div class="modal-body">
-           <%= form_for @job, url: new_job_path(@job) do |f| %>
-             <h4><%= f.label :title %></h4>
-             <%= f.text_field :title %></br>
+  <div id="mainPageBody">
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+           <h3 class="modal-title" id="myModalLabel">Add New Job</h3>
+         </div>
+         <div class="modal-body">
+             <%= form_for @job, url: new_job_path(@job) do |f| %>
+               <h4><%= f.label :title %></h4>
+               <%= f.text_field :title %></br>
 
-             <h4><%= f.label :location %></h4>
-             <%= f.text_field :location %></br>
+               <h4><%= f.label :location %></h4>
+               <%= f.text_field :location %></br>
 
-             <h4>  <%= f.label :start_date %></h4>
-             <%= f.date_field :start_date %></br>
+               <h4>  <%= f.label :start_date %></h4>
+               <%= f.date_field :start_date %></br>
 
-             <!-- <h3> <%= f.label :created_at, "Posted" %></h3>
-             <%= f.text_field :created_at %></br> -->
+               <!-- <h3> <%= f.label :created_at, "Posted" %></h3>
+               <%= f.text_field :created_at %></br> -->
 
-             <h4>  <%= f.label :salary %></h4>
-             <%= f.text_field :salary %></br>
+               <h4>  <%= f.label :salary %></h4>
+               <%= f.text_field :salary %></br>
 
-             <h4> <%= f.label :description %></h4>
-             <%= f.text_area  :description %>
+               <h4> <%= f.label :description %></h4>
+               <%= f.text_area  :description %>
 
-       </div>
-       <div class="modal-footer">
-         <h4><%= f.submit :id => "createJobButton", :class => "btn btn-default" %></h4>
-     <% end %>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         </div>
+         <div class="modal-footer">
+           <h4><%= f.submit :id => "createJobButton", :class => "btn btn-default" %></h4>
+       <% end %>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
+          </div>
         </div>
       </div>
     </div>
+
+    <% @jobs.each do |job| %>
+      <h3><%= job.title %></h3>
+      <h4>Location: <%= job.location %></h4>
+      <h4>Start Date: <%= job.start_date %> </h4>
+      <h4>Pay: <%= job.salary %> </h4>
+      <h4>About: <%= job.description %> </h4>
+      <h4>Posted: <%= job.created_at %> </h4></br>
+
+    <% end %>
   </div>
 
-  <% @jobs.each do |job| %>
-    <h3><%= job.title %></h3>
-    <h4>Location: <%= job.location %></h4>
-    <h4>Start Date: <%= job.start_date %> </h4>
-    <h4>Pay: <%= job.salary %> </h4>
-    <h4>About: <%= job.description %> </h4>
-    <h4>Posted: <%= job.created_at %> </h4></br>
-
-  <% end %>
 
 </div>

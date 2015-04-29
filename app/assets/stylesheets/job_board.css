@@ -7,17 +7,17 @@
   display: inline;
 }
 
-header {
-  padding: 2em;
-}
-
 #createJobButton {
   float: left;
 }
 
-/*.modal-body {
-  text-align: center;
-}*/
+header {
+  padding-top: 2em;
+}
+
+#mainPageBody {
+  padding-top: 5em;
+}
 
 .modal-title {
   text-align: center;
