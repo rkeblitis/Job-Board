@@ -1,0 +1,12 @@
+#addNewJob {
+  color: purple;
+  float: right;
+}
+
+#title {
+  display: inline;
+}
+
+header {
+  padding: 2em;
+}
