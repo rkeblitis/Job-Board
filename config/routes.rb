@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   # job_board Controller
-  get "/"     ,to:"job_board#new" ,as: :jobs
+  get   "/"             ,to:"job_board#new"       ,as: :jobs
+  post  "/"             ,to:"job_board#create"    ,as: :new_job
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

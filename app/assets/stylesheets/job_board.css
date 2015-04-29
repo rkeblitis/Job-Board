@@ -10,3 +10,15 @@
 header {
   padding: 2em;
 }
+
+#createJobButton {
+  float: left;
+}
+
+/*.modal-body {
+  text-align: center;
+}*/
+
+.modal-title {
+  text-align: center;
+}

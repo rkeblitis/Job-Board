@@ -5,7 +5,7 @@
     <button type="button" id="addNewJob" class="btn btn-default" data-toggle="modal" data-target="#myModal">
       Add New Job
     </button>
-    
+
   </header>
   <!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -13,41 +13,44 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+          <h3 class="modal-title" id="myModalLabel">Add New Job</h3>
         </div>
         <div class="modal-body">
           <form class="form-group">
-            <%= form_for @job do |f| %>
-              <h2>Add New Position</h2>
-
-              <h3><%= f.label :title %></h3>
+            <%= form_for @job, url: new_job_path do |f| %>
+              <h4><%= f.label :title %></h4>
               <%= f.text_field :title %></br>
 
-              <h3><%= f.label :location %></h3>
+              <h4><%= f.label :location %></h4>
               <%= f.text_field :location %></br>
 
-              <h3>  <%= f.label :start_date %></h3>
+              <h4>  <%= f.label :start_date %></h4>
               <%= f.date_field :start_date %></br>
 
               <!-- <h3> <%= f.label :created_at, "Posted" %></h3>
               <%= f.text_field :created_at %></br> -->
 
-              <h3>  <%= f.label :salary %></h3>
+              <h4>  <%= f.label :salary %></h4>
               <%= f.text_field :salary %></br>
 
-              <h3> <%= f.label :description %></h3>
+              <h4> <%= f.label :description %></h4>
               <%= f.text_area  :description %>
-
-              <h3><%= f.submit  %></h3>
-            <% end %>
 
           </form>
         </div>
         <div class="modal-footer">
+          <h4><%= f.submit :id => "createJobButton", :class => "btn btn-default"   %></h4>
+        <% end %>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         </div>
       </div>
     </div>
   </div>
+  <%= form_for @job, url: new_job_path do |f| %>
+    <h4><%= f.label :title %></h4>
+    <%= f.text_field :title %></br>
+    <h4><%= f.submit :id => "createJobButton", :class => "btn btn-default"   %></h4>
+  <% end %>
+
 </div>
