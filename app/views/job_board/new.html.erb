@@ -53,7 +53,7 @@
       <h4>Start Date: <%= job.start_date %> </h4>
       <h4>Pay: <%= job.salary %> </h4>
       <h4>About: <%= job.description %> </h4>
-      <h4>Posted: <%= job.created_at %> </h4></br>
+      <h4>Posted: <%= days_posted(job.created_at) %> </h4></br>
 
     <% end %>
   </div>
