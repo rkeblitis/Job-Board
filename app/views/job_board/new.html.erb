@@ -21,14 +21,14 @@
                <h4><%= f.label :title %></h4>
                <%= f.text_field :title %></br>
 
+               <h4><%= f.label :company %></h4>
+               <%= f.text_field :company %></br>
+
                <h4><%= f.label :location %></h4>
                <%= f.text_field :location %></br>
 
                <h4>  <%= f.label :start_date %></h4>
                <%= f.date_field :start_date %></br>
-
-               <!-- <h3> <%= f.label :created_at, "Posted" %></h3>
-               <%= f.text_field :created_at %></br> -->
 
                <h4>  <%= f.label :salary %></h4>
                <%= f.text_field :salary %></br>
@@ -51,6 +51,7 @@
       <h3><%= job.title %></h3>
       <h4>Location: <%= job.location %></h4>
       <h4>Start Date: <%= convert_to_pst(job.start_date) %> </h4>
+      <h4>Company: <%= job.company %> </h4>
       <h4>Pay: <%= job.salary %> </h4>
       <h4>About: <%= job.description %> </h4>
       <h4>Posted: <%= time_elasped(job.created_at) %> </h4></br>
