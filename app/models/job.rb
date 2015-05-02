@@ -1,5 +1,6 @@
 class Job < ActiveRecord::Base
-  has_many :categories, :through => :categorization
+  has_many :categories, :through => :categorizations
+  has_many :categorizations
 
   validates :title, presence: true
   validates :company, presence: true
