@@ -1,0 +1,28 @@
+<%= form_for @job do |f| %>
+  <h4><%= f.label :title %></h4>
+  <%= f.text_field :title %></br>
+
+  <h4><%= f.label :company %></h4>
+  <%= f.text_field :company %></br>
+
+  <h4><%= f.label :location %></h4>
+  <%= f.text_field :location %></br>
+
+  <h4>  <%= f.label :start_date %></h4>
+  <%= f.date_field :start_date %></br>
+
+  <h4>  <%= f.label :salary %></h4>
+  <%= f.text_field :salary %></br>
+
+  <h4> <%= f.label :description %></h4>
+  <%= f.text_area  :description %>
+
+  <!-- Make categories: generate html that's not nested within the form for @job -->
+  <% Category.all.each do |cat|%>
+    <%= cat.name %> <%= check_box_tag "categories[]", cat.id  %>
+  <% end  %>
+
+  <%= text_field_tag :new_category %>
+
+  <h4><%= f.submit :id => "createJobButton", :class => "btn btn-default" %></h4>
+<% end %>
