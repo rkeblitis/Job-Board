@@ -7,6 +7,7 @@
     </button>
 
   </header>
+  <!-- New Job Modal  -->
   <div id="mainPageBody">
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -17,54 +18,15 @@
            <h3 class="modal-title" id="myModalLabel">Add New Job</h3>
          </div>
          <div class="modal-body">
-             <%= form_for @job do |f| %>
-               <h4><%= f.label :title %></h4>
-               <%= f.text_field :title %></br>
-
-               <h4><%= f.label :company %></h4>
-               <%= f.text_field :company %></br>
-
-               <h4><%= f.label :location %></h4>
-               <%= f.text_field :location %></br>
-
-               <h4>  <%= f.label :start_date %></h4>
-               <%= f.date_field :start_date %></br>
-
-               <h4>  <%= f.label :salary %></h4>
-               <%= f.text_field :salary %></br>
-
-               <h4> <%= f.label :description %></h4>
-               <%= f.text_area  :description %>
-
-               <!-- felids_for for adding a category -->
-
-               <% Category.all.each do |cat|%>
-
-                  <!--1st argument is the key that submited in params to the controller
-                   2nd argument is the value you want the the controller to use for the join table
-                   -->
-                   <%= cat.name %> <%= check_box_tag "categories[]", cat.id  %>
-               <% end  %>
-               <%= text_field_tag :new_category %>
-
-               <!-- generate html that's not nested within the form for @job -->
-               <!-- form_tag methods are avaiable within form_form becuse it's just generating html -->
-
-
-
-
+           <%= render "job_form" %>
          </div>
          <div class="modal-footer">
-           <h4><%= f.submit :id => "createJobButton", :class => "btn btn-default" %></h4>
-       <% end %>
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
           </div>
         </div>
       </div>
     </div>
-
-    <%= Job.last.categories.inspect %>
     <!-- Display All Jobs  -->
     <% sort_jobs(@jobs).each do |job| %>
       <h3><%= job.title %></h3>
@@ -74,10 +36,7 @@
       <h4>Pay: <%= job.salary %> </h4>
       <h4>About: <%= job.description %> </h4>
       <h4>Posted <%= time_elasped(job.created_at) %> </h4></br>
-
-
     <% end %>
   </div>
-
 
 </div>
