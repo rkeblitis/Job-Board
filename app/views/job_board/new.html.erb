@@ -5,10 +5,19 @@
     <button type="button" id="addNewJob" class="btn btn-default" data-toggle="modal" data-target="#myModal">
       Add New Job
     </button>
-
   </header>
   <!-- New Job Modal  -->
   <div id="mainPageBody">
+    <!-- Filter Job List -->
+    <div class="searchByCategory">
+      <h3> Search by Category </h3>
+        <%= form_tag "/results", method: :get do %>
+          <% Category.all.each do |cat| %>
+            <h6><%= cat.name %></h6> <%= check_box_tag "filterCategories[]", cat.id  %>
+          <% end %></br></br>
+          <button class="btn btn-default"> Submit</button>
+        <% end %>
+    </div>
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
      <div class="modal-dialog">
@@ -19,24 +28,24 @@
          </div>
          <div class="modal-body">
            <%= render "job_form" %>
+           <button type="button" id="closeButton" class="btn btn-default" data-dismiss="modal">Close</button>
          </div>
          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
           </div>
         </div>
       </div>
     </div>
     <!-- Display All Jobs  -->
-    <% sort_jobs(@jobs).each do |job| %>
-      <h3><%= job.title %></h3>
-      <h4>Location: <%= job.location %></h4>
-      <h4>Start Date: <%= convert_to_pst(job.start_date) %> </h4>
-      <h4>Company: <%= job.company %> </h4>
-      <h4>Pay: <%= job.salary %> </h4>
-      <h4>About: <%= job.description %> </h4>
-      <h4>Posted <%= time_elasped(job.created_at) %> </h4></br>
-    <% end %>
+    <div class="ListJobs">
+      <% sort_jobs(@jobs).each do |job| %>
+        <h3><%= job.title %></h3>
+        <h4>Location: <%= job.location %></h4>
+        <h4>Start Date: <%= convert_to_pst(job.start_date) %> </h4>
+        <h4>Company: <%= job.company %> </h4>
+        <h4>Pay: <%= job.salary %> </h4>
+        <h4>About: <%= job.description %> </h4>
+        <h4>Posted <%= time_elasped(job.created_at) %> </h4></br>
+      <% end %>
+    </div>
   </div>
-
 </div>

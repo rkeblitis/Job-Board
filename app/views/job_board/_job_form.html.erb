@@ -18,10 +18,11 @@
   <%= f.text_area  :description %>
 
   <!-- Make categories: generate html that's not nested within the form for @job -->
+  <h4>Tags </h4>
   <% Category.all.each do |cat|%>
     <%= cat.name %> <%= check_box_tag "categories[]", cat.id  %>
   <% end  %>
-
+  <h5> Add New Tag</h5>
   <%= text_field_tag :new_category %>
 
   <h4><%= f.submit :id => "createJobButton", :class => "btn btn-default" %></h4>

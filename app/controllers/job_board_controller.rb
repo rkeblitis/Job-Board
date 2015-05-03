@@ -17,4 +17,12 @@ class JobBoardController < ApplicationController
     redirect_to jobs_path
   end
 
+  def results
+    categories = Category.find(params[:filterCategories])
+    @results = []
+    categories.each do |cat|
+      @results << cat.jobs
+    end
+  end
+
 end

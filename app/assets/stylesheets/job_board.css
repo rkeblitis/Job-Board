@@ -3,6 +3,15 @@
   float: right;
 }
 
+.searchByCategory {
+  float: right;
+
+}
+
+#closeButton {
+  float: right;
+}
+
 #title {
   display: inline;
 }
