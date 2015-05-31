@@ -1,18 +1,22 @@
+header {
+  padding-top: 2em;
+  padding-right: 5em;
+  padding-bottom: 4em;
+  /*background-color: yellow;*/
+}
+
 #addNewJob {
   color: purple;
   float: right;
 }
 
-.searchByCategory {
-  float: right;
-
-}
 
 #closeButton {
   float: right;
 }
 
 #title {
+  padding-left: .5em;
   display: inline;
 }
 
@@ -20,14 +24,15 @@
   float: left;
 }
 
-header {
-  padding-top: 2em;
-}
-
-#mainPageBody {
+/*#mainPageBody {
   padding-top: 5em;
-}
+}*/
 
 .modal-title {
   text-align: center;
 }
+
+/*.listJobs {
+  width: 300px;
+  text-align: center;
+}*/

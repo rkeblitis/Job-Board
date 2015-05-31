@@ -1,20 +1,35 @@
 <div class="container">
-  <header>
+  <header >
     <h1 id="title">Ada Job Board</h1>
     <!-- Button trigger modal -->
-    <button type="button" id="addNewJob" class="btn btn-default" data-toggle="modal" data-target="#myModal">
-      Add New Job
-    </button>
+      <button type="button" id="addNewJob" class="btn btn-default"  data-toggle="modal" data-target="#myModal">
+        Add New Job
+      </button>
   </header>
   <!-- New Job Modal  -->
   <div id="mainPageBody">
+    <!-- Display All Jobs  -->
+    <div class ="col-md-8" class="listJobs">
+      <% sort_jobs(@jobs).each do |job| %>
+        <h3><%= job.title %></h3>
+        <h4>Location: <%= job.location %></h4>
+        <h4>Start Date: <%= convert_to_pst(job.start_date) %> </h4>
+        <h4>Company: <%= job.company %> </h4>
+        <h4>Pay: <%= job.salary %> </h4>
+        <h4>About: <%= job.description %> </h4>
+        <h4>Posted <%= time_elasped(job.created_at) %> </h4></br>
+      <% end %>
+    </div>
+    <!--Empty Div to make Grid Look nice  -->
+    <div class="col-md-2">
+    </div>
     <!-- Filter Job List -->
-    <div class="searchByCategory">
+    <div class="col-md-2">
       <h3> Search by Category </h3>
         <%= form_tag "/results", method: :get do %>
           <% Category.all.each do |cat| %>
-            <h6><%= cat.name %></h6> <%= check_box_tag "filterCategories[]", cat.id  %>
-          <% end %></br></br>
+            <h6><%= check_box_tag "filterCategories[]", cat.id  %>   <%= cat.name %> </h6>
+          <% end %>
           <button class="btn btn-default"> Submit</button>
         <% end %>
     </div>
@@ -35,17 +50,6 @@
         </div>
       </div>
     </div>
-    <!-- Display All Jobs  -->
-    <div class="ListJobs">
-      <% sort_jobs(@jobs).each do |job| %>
-        <h3><%= job.title %></h3>
-        <h4>Location: <%= job.location %></h4>
-        <h4>Start Date: <%= convert_to_pst(job.start_date) %> </h4>
-        <h4>Company: <%= job.company %> </h4>
-        <h4>Pay: <%= job.salary %> </h4>
-        <h4>About: <%= job.description %> </h4>
-        <h4>Posted <%= time_elasped(job.created_at) %> </h4></br>
-      <% end %>
-    </div>
+
   </div>
 </div>
