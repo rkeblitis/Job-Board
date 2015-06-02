@@ -10,6 +10,7 @@ class Job < ActiveRecord::Base
   #validates :salary, presence: true
 
 
+
 end
 
 

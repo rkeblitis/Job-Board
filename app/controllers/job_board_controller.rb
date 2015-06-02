@@ -18,12 +18,14 @@ class JobBoardController < ApplicationController
   end
 
   def results
-    # @cats = SELECT  "categories".* FROM "categories" INNER JOIN "categorizations" ON "categories"."id" = "categorizations"."category_id" WHERE "categorizations"."job_id" = $1 AND "id"."id" = 8 LIMIT 1>
-    # @categories = Jobs.Categroizations.where(Category.id = params[:filterCategories])
     categories = Category.find(params[:filterCategories])
-     @results = []
+    @results = []
      categories.each do |cat|
-       @results << cat.jobs
+       cat.jobs.each do |job|
+         unless @results.include?(job)
+           @results << job
+         end
+       end
      end
   end
 
