@@ -2,11 +2,11 @@ class Job < ActiveRecord::Base
   has_many :categories, :through => :categorizations
   has_many :categorizations
 
-  validates :title, presence: true
-  validates :company, presence: true
-  validates :location, presence: true
-  validates :description, presence: true
-  validates :start_date, presence: true
+  # validates :title, presence: true
+  # validates :company, presence: true
+  # validates :location, presence: true
+  # validates :description, presence: true
+   validates :start_date, presence: true
   #validates :salary, presence: true
 
 

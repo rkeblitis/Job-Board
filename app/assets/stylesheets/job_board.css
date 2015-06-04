@@ -4,35 +4,27 @@ header {
   padding-bottom: 4em;
 }
 
-#addNewJob {
-  /*color: purple;*/
-  float: right;
-}
-
-
-#closeButton {
-  float: right;
-}
-
 #title {
   padding-left: .5em;
   display: inline;
-  /*color: #7F7F7F;*/
+}
+
+#addNewJobButton {
+  float: right;
+}
+
+#homeButton {
+  float: right;
+}
+
+#closeButton {
+  float: right;
 }
 
 #createJobButton {
   float: left;
 }
 
-/*#mainPageBody {
-  padding-top: 5em;
-}*/
-
 .modal-title {
   text-align: center;
 }
-
-/*.listJobs {
-  width: 300px;
-  text-align: center;
-}*/

@@ -1,5 +1,5 @@
 class JobBoardController < ApplicationController
-
+include JobBoardHelper
 
   def new
     @job = Job.new
@@ -23,10 +23,14 @@ class JobBoardController < ApplicationController
      categories.each do |cat|
        cat.jobs.each do |job|
          unless @results.include?(job)
-           @results << job
+          #  job_info = {title: job.title, location: job.location, description: job.description, company: job.company,
+          #  start_date: convert_to_pst(job.start_date), date_posted: time_elasped(job.created_at)}
+          #  @results << job_info
+          @results << job
          end
        end
      end
+    render json: @results
   end
 
 end

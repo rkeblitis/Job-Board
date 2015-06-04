@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   # job_board Controller
   get   "/"             ,to:"job_board#new"     ,as: :jobs
   post  "/"             ,to:"job_board#create"  ,as: :new_job
-  get   "/results"      ,to:"job_board#results" ,as: :results
+  # get   "/results"      ,to:"job_board#results" ,as: :results
+  post  "/results"      ,to:"job_board#results" ,as: :results
 
 
   # The priority is based upon order of creation: first created -> highest priority.
