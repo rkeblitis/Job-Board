@@ -1,30 +1,64 @@
 header {
-  padding-top: 2em;
+  font-family: 'Play', sans-serif;
+  padding: 5em;
+  text-align: center;
+  /*background-color: #847EB2;*/
+  /*padding-top: 2em;
   padding-right: 5em;
-  padding-bottom: 4em;
+  padding-bottom: 4em;*/
 }
 
-#title {
+/*#title {
   padding-left: .5em;
   display: inline;
-}
+}*/
 
-#addNewJobButton {
+/*#addNewJobButton {
   float: right;
+}*/
+
+#searchByCategory {
+  padding: 5em;
+  padding-top: 2em;
+  text-align: center;
+  /*background-color: #FFD9C0;*/
 }
 
-#homeButton {
-  float: right;
+.categories {
+  font-family: 'Open Sans', sans-serif;
+  display: inline;
+  padding-right: .5em;
 }
 
+#jobs {
+  font-family: 'Open Sans', sans-serif;
+  padding: 5em;
+  padding-left: 10em;
+  padding-top: 0em;
+  text-align: left;
+  /*background-color: #DDFFDA;*/
+}
+
+#results {
+  font-family: 'Open Sans', sans-serif;
+  padding: 5em;
+  padding-top: 5em;
+  text-align: left;
+  /*background-color: #DDFFDA;*/
+}
+
+/*New Job Modal*/
 #closeButton {
+  font-family: 'Play', sans-serif;
   float: right;
 }
 
 #createJobButton {
+  font-family: 'Play', sans-serif;
   float: left;
 }
 
 .modal-title {
+  font-family: 'Play', sans-serif;
   text-align: center;
 }

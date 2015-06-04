@@ -20,13 +20,13 @@ $( document ).ready(function() {
           // var element = $("<h1></h1>");
           // element.data("location", object.location);
           var start_date = object.start_date.toString()
-          $("#results").append($("<h3>Title "+ object.title +"</h3>"));
-          $("#results").append($("<h4>Location "+ object.location +"</h4>"));
-          $("#results").append($("<h4>Start Date "+ ($.format.date(object.start_date.toString(), "dd/MM/yyyy")) +"</h4>"));
-          $("#results").append($("<h4>Company "+ object.company +"</h4>"));
-          $("#results").append($("<h4>Pay "+ object.salary +"</h4>"));
-          $("#results").append($("<h4>Description "+ object.description +"</h4>"));
-          $("#results").append($("<h4> Posted " + jQuery.format.prettyDate(object.created_at) +"</h4>"));
+          $("#results").append($("<h3>"+ object.title +"</h3>"));
+          $("#results").append($("<h4>Location: "+ object.location +"</h4>"));
+          $("#results").append($("<h4>Start Date: "+ ($.format.date(object.start_date.toString(), "dd/MM/yyyy")) +"</h4>"));
+          $("#results").append($("<h4>Company: "+ object.company +"</h4>"));
+          $("#results").append($("<h4>Pay: "+ object.salary +"</h4>"));
+          $("#results").append($("<h4>About: "+ object.description +"</h4>"));
+          $("#results").append($("<h4> Posted " + jQuery.format.prettyDate(object.created_at) +"</h4>" + " <br/>"));
 
         });
       }

@@ -4,11 +4,21 @@
       <button type="button" id="addNewJobButton" class="btn btn-default"  data-toggle="modal" data-target="#myModal">
         Add New Job
       </button>
+      <!-- Filter Job List -->
+      <div id="searchByCategory" class="col-md-12">
+        <h5> Search by Category </h5>
+          <%= form_tag "/results",remote: true do %>
+            <% Category.all.each do |cat| %>
+              <%= check_box_tag "filterCategories[]", cat.id  %> <p class="categories"> <%= cat.name %> </p>
+            <% end %>
+          </br></br><button id="filterForm" class="btn btn-default"> Filter</button>
+          <% end %>
+      </div>
   </header>
   <!-- New Job Modal  -->
   <div id="mainPageBody">
     <!-- Display All Jobs  -->
-    <div class ="col-md-8" id="jobs" class="listJobs">
+    <div class ="col-md-12" id="jobs" class="listJobs">
       <% sort_jobs(@jobs).each do |job| %>
         <h3><%= job.title %></h3>
         <h4>Location: <%= job.location %></h4>
@@ -20,17 +30,7 @@
       <% end %>
     </div>
     <!--Empty Div to make Grid Look nice  -->
-    <div class="col-md-2">
-    </div>
-    <!-- Filter Job List -->
-    <div class="col-md-2">
-      <h3> Search by Category </h3>
-        <%= form_tag "/results",remote: true do %>
-          <% Category.all.each do |cat| %>
-            <h6><%= check_box_tag "filterCategories[]", cat.id  %>   <%= cat.name %> </h6>
-          <% end %>
-          <button id="filterForm" class="btn btn-default"> Submit</button>
-        <% end %>
+    <div class="col-md-12">
     </div>
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -51,5 +51,6 @@
     </div>
     <!-- Filter Results  -->
     <div id="results">
+
     </div>
   </div>
