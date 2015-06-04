@@ -42,7 +42,8 @@ header {
 #results {
   font-family: 'Open Sans', sans-serif;
   padding: 5em;
-  padding-top: 5em;
+  padding-left: 10em;
+  padding-top: 0em;
   text-align: left;
   /*background-color: #DDFFDA;*/
 }
