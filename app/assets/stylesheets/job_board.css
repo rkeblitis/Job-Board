@@ -53,6 +53,10 @@ header {
   float: right;
 }
 
+.jobForm {
+  font-family: 'Open Sans', sans-serif;
+}
+
 #createJobButton {
   font-family: 'Play', sans-serif;
   float: left;

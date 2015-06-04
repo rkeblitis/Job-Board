@@ -1,22 +1,23 @@
 <%= form_for @job do |f| %>
-  <h4><%= f.label :title %></h4>
-  <%= f.text_field :title %></br>
+  <div class="jobForm">
+    <h4><%= f.label :title %></h4>
+    <%= f.text_field :title %></br>
 
-  <h4><%= f.label :company %></h4>
-  <%= f.text_field :company %></br>
+    <h4><%= f.label :company %></h4>
+    <%= f.text_field :company %></br>
 
-  <h4><%= f.label :location %></h4>
-  <%= f.text_field :location %></br>
+    <h4><%= f.label :location %></h4>
+    <%= f.text_field :location %></br>
 
-  <h4>  <%= f.label :start_date %></h4>
-  <%= f.date_field :start_date %></br>
+    <h4>  <%= f.label :start_date %></h4>
+    <%= f.date_field :start_date %></br>
 
-  <h4>  <%= f.label :salary %></h4>
-  <%= f.text_field :salary %></br>
+    <h4>  <%= f.label :salary %></h4>
+    <%= f.text_field :salary %></br>
 
-  <h4> <%= f.label :description %></h4>
-  <%= f.text_area  :description %>
-
+    <h4> <%= f.label :description %></h4>
+    <%= f.text_area  :description %>
+  </div>  
   <!-- Make categories: generate html that's not nested within the form for @job -->
   <h4>Tags </h4>
   <% Category.all.each do |cat|%>
