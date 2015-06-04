@@ -50,6 +50,7 @@ group :development, :test do
   group :development, :test do
     gem'rspec-rails', '~> 3.0.0'
   end
-
+  
+ gem "rails_12factor"
 
 end
