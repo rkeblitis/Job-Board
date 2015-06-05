@@ -16,18 +16,24 @@
       </div>
   </header>
   <!-- New Job Modal  -->
-  <div id="mainPageBody">
+  <div id="mainPageBody" >
     <!-- Display All Jobs  -->
-    <div class ="col-md-12" id="jobs" class="listJobs">
-      <% sort_jobs(@jobs).each do |job| %>
-        <h3><%= job.title %></h3>
-        <h4>Location: <%= job.location %></h4>
-        <h4>Start Date: <%= convert_to_pst(job.start_date) %> </h4>
-        <h4>Company: <%= job.company %> </h4>
-        <h4>Pay: <%= job.salary %> </h4>
-        <h4>About: <%= job.description %> </h4>
-        <h4>Posted <%= time_elasped(job.created_at) %> </h4></br>
-      <% end %>
+    <div id="jobs" class="row">
+      <div class="col-md-6">
+        <% sort_jobs(@jobs).each do |job| %>
+          <h3><%= job.title %></h3>
+          <h4>Location: <%= job.location %></h4>
+          <h4>Start Date: <%= convert_to_pst(job.start_date) %> </h4>
+          <h4>Company: <%= job.company %> </h4>
+          <h4>Pay: <%= job.salary %> </h4>
+          <h4>Posted <%= time_elasped(job.created_at) %> </h4>
+      </div>
+
+      <div class="col-md-6">
+          <h4>About: <%= job.description %> </h4></br>
+      </div>
+        <% end %>
+
     </div>
     <!--Empty Div to make Grid Look nice  -->
     <div class="col-md-12">

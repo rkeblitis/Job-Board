@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20150430023738) do
   create_table "jobs", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.integer  "salary"
+    t.string   "salary"
     t.text     "location"
     t.datetime "start_date"
     t.datetime "created_at",  null: false
